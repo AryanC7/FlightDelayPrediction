@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Delay Prediction Model</title>
+</head>
+
+
+<body>
+<div class="login">
+    <div class="banner">
+        <h1>Flight Delay Prediction Model</h1>
+    </div>
+    <h3> A model to predict the delay of your flight. <br>
+    </h3>
+
+    <form action="{{ url_for('predict')}}" method="post">
+
+        <!-- <label for="Airline">Airline</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Airline" required="required" />
+        <br><br> -->
+
+        <label for="Airline">Airline</label> 
+        <select id="Airline" name="Airline">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Commutair Aka Champlain Enterprises, Inc.">Commutair Aka Champlain Enterprises, Inc.</option>
+        </select>
+        <br><br>
+
+        <!-- <label for="Origin">Origin</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Origin" required="required" />
+        <br><br> -->
+
+        <label for="Origin">Origin</label> 
+        <select id="Origin" name="Origin">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="GJT">GJT</option>
+        </select>
+        <br><br>
+
+        <!-- <label for="Destination">Destination</label> &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Destination" required="required" />
+        <br><br> -->
+
+        <label for="Destination">Destination</label> 
+        <select id="Destination" name="Destination">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="DEN">DEN</option>
+        </select>
+        <br><br>
+
+        <label for="Departure_Time">Departure Time</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Departure_Time" placeholder="hhmm (no space)" required="required" />
+        <br><br>
+
+        <!-- <label for="Origin_City">Origin City</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Origin_City" required="required" />
+        <br><br> -->
+
+        <label for="Origin_City">Origin City</label> 
+        <select id="Origin_City" name="Origin_City">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Grand Junction, CO">Grand Junction, CO</option>
+        </select>
+        <br><br>
+
+        <!-- <label for="Origin_State">Origin State</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Origin_State" required="required" />
+        <br><br> -->
+
+        <label for="Origin_State">Origin State</label> 
+        <select id="Origin_State" name="Origin_State">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Colorado">Colorado</option>
+        </select>
+        <br><br>
+
+        <!-- <label for="Destination_City">Destination City</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Destination_City" required="required" />
+        <br><br> -->
+
+        <label for="Destination_City">Destination City</label> 
+        <select id="Destination_City" name="Destination_City">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Denver, CO">Denver, CO</option>
+        </select>
+        <br><br>
+
+        <!-- <label for="Destination_State">Destination State</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Destination_State" required="required" />
+        <br><br> -->
+
+        <label for="Destination_State">Destination State</label> 
+        <select id="Destination_State" name="Destination_State">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Colorado">Colorado</option>
+        </select>
+        <br><br>
+
+        <label for="Arrival_Time">Arrival Time</label> 
+        <input type="text" name="Arrival_Time" placeholder="hhmm (no space)" required="required" />
+        <br><br>
+
+        <!-- <label for="Year">Year</label> 
+        <input type="text" name="Year" placeholder="yyyy" required="required" />
+        <br><br>
+
+        <label for="Month">Month</label> 
+        <input type="text" name="Month" placeholder="mm" required="required" />
+        <br><br> -->
+
+
+        <p style="text-align:center;"><input type="submit", value = "Submit" style="height:30px; width:70px"></p>
+    </form>
+    <h3>{{prediction_text}}</h3>
+    <br><br>
+</div>
+
+</body>
+
+</html>
+
+<style type="text/css">
+
+.login {
+height: 550px;
+  width: 500px;
+  border: 1px solid green ;
+  background-color: #E9ECE9;
+  opacity: 0.75;
+  padding: 20px 50px;
+}
+         body {
+                  width: 100vw;
+                  height: 100vh;
+                  display: flex;
+                  overflow: hidden;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  font-family: sans-serif;
+                  font-size: 16px;
+                  background-image: url(https://c4.wallpaperflare.com/wallpaper/55/891/733/photography-sunset-sky-clouds-wallpaper-preview.jpg);
+                  background-position: center; /* Center the image */
+                  background-repeat: no-repeat; /* Do not repeat the image */
+                  background-size: cover; /* Resize the background image to cover the entire container */
+                  
+}
+
+h3 {
+text-align: center;
+}
+
+h1 {
+text-align: center;
+}
+
+  </style>
